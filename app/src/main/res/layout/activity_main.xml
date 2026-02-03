@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start" />
+
+    <Button
+        android:id="@+id/button_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stop" />
+
+    <CheckBox
+        android:id="@+id/check_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/check_ui" />
+
+    <TextView
+        android:id="@+id/num_iteration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="100sp" />
+
+
+</LinearLayout>

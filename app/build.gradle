@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+    // Убрали kotlinOptions, так как плагин Kotlin не используется
+}
+
+android {
+    namespace "ru.myitschool.mte"
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "ru.myitschool.mte"
+        minSdk 26
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    // УБРАТЬ этот блок, так как плагин Kotlin не используется:
+    // kotlinOptions {
+    //     jvmTarget = '11'
+    // }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    testOptions {
+        animationsDisabled true
+    }
+}
+
+dependencies {
+    // Убрать Kotlin-зависимости или подключить плагин Kotlin
+
+    // implementation 'androidx.core:core-ktx:1.7.0'  // Kotlin зависимость
+
+    implementation "androidx.appcompat:appcompat:1.4.1"
+    implementation "com.google.android.material:material:1.6.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.3"
+
+    // Убрать Kotlin Coroutines
+    // implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+
+    // Убрать -ktx суффиксы (или подключить плагин Kotlin)
+    // implementation "androidx.navigation:navigation-fragment-ktx:$jetpack_version"
+    // implementation "androidx.navigation:navigation-fragment:$jetpack_version"
+    // implementation "androidx.navigation:navigation-ui:$jetpack_version"
+
+    // Используйте обычные зависимости
+    implementation "androidx.navigation:navigation-fragment:2.5.0"
+    implementation "androidx.navigation:navigation-ui:2.5.0"
+    implementation libs.work.runtime
+
+    androidTestImplementation "io.github.kakaocup:kakao:3.0.8"  // Указать версию вместо переменной
+
+    implementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-accessibility:3.4.0'
+
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test:rules:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.4.0'
+}
